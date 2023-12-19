@@ -1,7 +1,11 @@
 import React from "react"
-import { View, Text, TextInput, Button, Image , StyleSheet } from "react-native"
+import { View, Text, TextInput, Image , StyleSheet } from "react-native"
+import { Button } from "./button/button"
 
 export default function Login(){
+  function handleButtonPress(){
+    console.log("pressionou")
+  }
   return(
     <View style={styles.Container}>
       <View style={styles.LogoContainer}>
@@ -14,8 +18,8 @@ export default function Login(){
         <TextInput style={styles.Login} placeholder="Login"></TextInput>
         <TextInput style={styles.Password}placeholder="Senha" secureTextEntry={true}></TextInput>
       </View>
-      <View style={styles.FormButton}>
-        <Button title="Entrar"/>
+      <View>
+        <Button onPress={handleButtonPress}></Button>
       </View>
       <View></View>
     </View>
@@ -33,7 +37,7 @@ const styles = StyleSheet.create({
   Container: {
     justifyContent: 'flex-start',
     alignItems: 'center',
-    backgroundColor: 'blue',
+    backgroundColor: blue,
     height: '100%',
     width: '100%'
   },
@@ -56,7 +60,7 @@ const styles = StyleSheet.create({
     fontSize: 40,
     fontWeight: 'bold',
     marginBottom: 20,
-    color:'blank',
+    color:blank,
    },
 
    FormContainer:{
@@ -67,22 +71,18 @@ const styles = StyleSheet.create({
    },
 
    Login:{
-    color:'gray',
-    backgroundColor:'blank',
+    color:gray,
+    backgroundColor:blank,
     width:'85%',
     borderRadius:5,
     
    },
 
    Password:{
-    color:'gray',
-    backgroundColor:'blank',
+    color:gray,
+    backgroundColor:blank,
     width:'85%',
     borderRadius:5,
     marginTop:10,
-   },
-
-   FormButton:{
-    backgroundColor: yellow,
    },
 });
